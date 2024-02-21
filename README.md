@@ -1,6 +1,6 @@
 # 使用说明
-## two indoor worlds and one outdoor worlds
-按照如下两个步骤操作，然后在`launch`文件中，修改  
+## Add two indoor worlds and one outdoor world
+按照说明解压`models.zip`和`worlds.zip`后在`launch`文件中，修改  
 ```
  <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/indoor2.world"/>
 ```
@@ -24,11 +24,11 @@ outdoor1截图
 
 
 ### model.zip
-请将文件夹解压至models环境变量对应路径  
-在PX4环境中应该对应：`~/PX4-Autopilot/Tools/sitl_gazebo/models`  
+请解压至`models`环境变量对应路径  
+在PX4环境中对应：`~/PX4-Autopilot/Tools/sitl_gazebo/models`  
 ### worlds.zip
-请将文件夹解压至worlds环境变量对应路径  
-在PX4环境中应该对应：`/home/robot/PX4-Autopilot/Tools/sitl_gazebo/worlds`  \
+请解压至`worlds`环境变量对应路径  
+在PX4环境中对应：`~/PX4-Autopilot/Tools/sitl_gazebo/worlds`  
 ## 添加groundtruth的方法
 在无人机/车对应的`.sdf`文件末尾加入  
 ```
