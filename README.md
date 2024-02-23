@@ -30,7 +30,7 @@ outdoor1截图
 请解压至`worlds`环境变量对应路径  
 在PX4环境中对应：`~/PX4-Autopilot/Tools/sitl_gazebo/worlds`  
 ## 添加groundtruth的方法
-在无人机/车对应的`.sdf`文件末尾加入  
+在无人机:`iris.sdf`文件末尾加入  
 ```
 <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
       <alwaysOn>true</alwaysOn>
@@ -43,14 +43,24 @@ outdoor1截图
       <rpyOffsets>0 0 0</rpyOffsets>
 </plugin>
 ```
-如图：  
+可参考给出的`iris.sdf`文件  
 
-<div align="center">
-  
-![](/photos/groundture.png)
-
-</div>
-
-我在文件`crazyflie.sdf`末尾添加以后就能够通过`rostopic echo /ground_truth/state`获得groundtruth  
+在无人车`scout_v2.xacro`末尾加上上述`demo`注意有`<gazebo> </gazebo>`  
 
 可以通过`<topicName>ground_truth/state</topicName>`改变`topic`  
+
+## 功能包keyboard
+请添加到ros工作空间  
+位置控制无人机  
+参考自`https://www.guyuehome.com/43667`  
+本人添加了`u``o`键位旋转的功能，还存在bug，望周知  
+
+## 功能包offboard_pkg
+请添加到ros工作空间  
+速度控制无人机  
+参考自`https://blog.csdn.net/HuangChen666/article/details/129642230`  
+
+## 地图更新
+- [X] 更改`models/cpr_office` `models/cpr_office_construction`  
+- [X] 更改`worlds/indoor1.world` `indoor2.world`  
+
