@@ -15,6 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   sensor_msgs
   tf
+  tf2
 )
 find_package(Eigen3)
 find_package(PCL 1.10 REQUIRED)
@@ -110,7 +111,7 @@ find_package(PCL 1.10 REQUIRED)
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES keyboard
-  CATKIN_DEPENDS laser_geometry mavros_msgs pcl_conversions pcl_ros roscpp sensor_msgs tf
+  CATKIN_DEPENDS laser_geometry mavros_msgs pcl_conversions pcl_ros roscpp sensor_msgs tf 
 #  DEPENDS system_lib
 )
 

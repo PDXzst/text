@@ -1,42 +1,6 @@
 <sdf version='1.7'>
   <world name='default'>
-    <model name='ground_plane'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>100 100</size>
-            </plane>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>100</mu>
-                <mu2>50</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <bounce/>
-            <contact>
-              <ode/>
-            </contact>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <velocity_decay>
-          <linear>0</linear>
-          <angular>0</angular>
-        </velocity_decay>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-        <gravity>1</gravity>
-        <enable_wind>0</enable_wind>
-      </link>
-    </model>
+
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
       <pose>0 0 10 0 -0 0</pose>
@@ -77,18 +41,9 @@
       <real_time>64 199457493</real_time>
       <wall_time>1708669838 197475822</wall_time>
       <iterations>63928</iterations>
-      <model name='ground_plane'>
-        <pose>0 0 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose>0 0 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
+
       <model name='office_geom'>
-        <pose>5.40131 -8.36889 -0 0 -0 0</pose>
+        <pose>0 0 -0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='office_world_link'>
           <pose>5.40131 -8.36889 -0 0 -0 0</pose>
@@ -135,7 +90,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>model://cpr_office/meshes/office2.dae</uri>
+              <uri>model://cpr_office/meshes/office3.dae</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -157,7 +112,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>model://cpr_office/meshes/office2.dae</uri>
+              <uri>model://cpr_office/meshes/office3.dae</uri>
             </mesh>
           </geometry>
         </visual>

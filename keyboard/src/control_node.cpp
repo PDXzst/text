@@ -36,6 +36,7 @@ Eigen::Vector3d Quaterniond2Euler(const double x,const double y,const double z,c
     //cout << "x = "<< euler[2] << endl ;
     //cout << "y = "<< euler[1] << endl ;
     //cout << "z = "<< euler[0] << endl << endl;
+    euler[0] = atan2(sin(euler[0]), cos(euler[0]));
     return euler;
 }
 
@@ -134,6 +135,7 @@ void keyboardCallback(const std_msgs::Char::ConstPtr &msg, geometry_msgs::PoseSt
             case 'U':
                 // 执行逆时针旋转
                 xyz[0] += 0.1;
+                
                 break;
             case 'o':
             case 'O':
@@ -150,16 +152,19 @@ void keyboardCallback(const std_msgs::Char::ConstPtr &msg, geometry_msgs::PoseSt
             }
         }
     }
-    Eigen::Quaterniond xyzw = euler2Quaternion(xyz[0],xyz[1],xyz[0]);
+    
+    Eigen::Quaterniond xyzw = euler2Quaternion(xyz[0],xyz[1],xyz[2]);
+    
     pose.pose.orientation.x = xyzw.x();
     pose.pose.orientation.y = xyzw.y();
     pose.pose.orientation.z = xyzw.z();
     pose.pose.orientation.w = xyzw.w();
+    
 }
 
 int main(int argc, char **argv)
 {
-    float target_altitude = 2;
+    float target_altitude = 1.2;
     float radius = 200;
     ros::init(argc, argv, "px4_lidar");
     PX4_Control px4_control;
@@ -231,4 +236,3 @@ int main(int argc, char **argv)
 
     return 0;
 }
-
