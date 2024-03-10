@@ -107,6 +107,22 @@ rosbag record /cmd_vel
 速度控制无人机  
 参考自`https://blog.csdn.net/HuangChen666/article/details/129642230`  
 
+## 功能包state_path_rviz
+用于订阅`nav_msgs::Odometry`在`rviz`中可视化，适用于机器人的`groundture`  
+`odom2path`在`rviz`中为`/Path`曲线  
+`odom2pose`可在`rviz`中生成`Marker`型的`(椭)球`和`线`，两者一起输出可形成`串珠型曲线`  
+使用方法：  
+1、更改`launch`中对应的`groundture话题`  
+2、启动  
+```
+roslaunch state_path_rviz odom2path.launch
+```
+```
+roslaunch state_path_rviz odom2pose.launch
+```
+两个程序互不冲突，可以一起运行，看看哪种曲线比较好  
+另外在`odom2pose`中，我目前设置的是图形只保留5s，可以在`.py`中自行设置保留时间，也可以DIY球和线的大小颜色等，我加了注释很容易修改  
+
 ## uav.bag car.bag
 测试时录制的`bag`文件  
 

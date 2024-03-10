@@ -1,0 +1,20 @@
+<launch>
+    <!-- 输出曲线为Marks类型 -->
+    <!--groundture话题：-->
+    <arg name="groundture_odom_topic" default="ground_state"/>
+    <!--groundture输出pose话题：-->
+    <arg name="groundture_pose_topic" default="ground_pose"/>
+    <!--groundture输出line话题：-->
+    <arg name="groundture_line_topic" default="ground_line"/>
+    <!--在rviz中同时显示上述两个话题可绘制串珠型图像-->
+    <node pkg="state_path_rviz" type="odom2pose.py" name="groundture_odom_to_pose" output="screen">
+        <param name="odom_topic" value="$(arg groundture_odom_topic)"/>
+        <param name="pose_topic" value="$(arg groundture_pose_topic)"/>
+        <param name="line_topic" value="$(arg groundture_line_topic)"/>
+        <!--颜色设置-->
+        <param name="red" type="int" value="1"/>
+        <param name="green" type="int" value="1"/>
+        <param name="blue" type="int" value="0"/>
+        <!--要自定义球或者线的停留时间，请直接到代码odom2pose里修改-->
+    </node>
+</launch>
