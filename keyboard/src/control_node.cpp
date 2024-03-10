@@ -134,13 +134,13 @@ void keyboardCallback(const std_msgs::Char::ConstPtr &msg, geometry_msgs::PoseSt
             case 'u':
             case 'U':
                 // 执行逆时针旋转
-                xyz[0] += 0.1;
+                xyz[0] += 0.03;
                 
                 break;
             case 'o':
             case 'O':
                 // 执行顺时针旋转
-                xyz[0] -= 0.1;
+                xyz[0] -= 0.03;
                 break;
             case 'q':
             case 'Q':

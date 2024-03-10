@@ -124,14 +124,14 @@ void keyboardCallback(const std_msgs::Char::ConstPtr &msg, geometry_msgs::PoseSt
                     pose.pose.position.z -= 0.1;
                 }
                 break;
-            case 'l':
-            case 'L':
+            case 'o':
+            case 'O':
                 // 执行向右平移的操作
-                trans_y =  transform_into_robot(pose.pose.orientation,y_point);
-                pose.pose.position.x -= trans_y.x;
-                pose.pose.position.y -= trans_y.y;
-                pose.pose.position.z -= trans_y.z;
-                break;
+                trans_x =  transform_into_robot(pose.pose.orientation,x_point);
+                pose.pose.position.x += trans_x.x;
+                pose.pose.position.y += trans_x.y;
+                pose.pose.position.z += trans_x.z;
+                xyz[0] -= 0.02;
             case 'i':
             case 'I':
                 // 执行向前平移的操作
@@ -140,13 +140,14 @@ void keyboardCallback(const std_msgs::Char::ConstPtr &msg, geometry_msgs::PoseSt
                 pose.pose.position.y += trans_x.y;
                 pose.pose.position.z += trans_x.z;
                 break;
-            case 'j':
-            case 'J':
+            case 'U':
+            case 'u':
                 // 执行向左平移的操作
-                trans_y =  transform_into_robot(pose.pose.orientation,y_point);
-                pose.pose.position.x += trans_y.x;
-                pose.pose.position.y += trans_y.y;
-                pose.pose.position.z += trans_y.z;
+                trans_x =  transform_into_robot(pose.pose.orientation,x_point);
+                pose.pose.position.x += trans_x.x;
+                pose.pose.position.y += trans_x.y;
+                pose.pose.position.z += trans_x.z;
+                xyz[0] += 0.02;
                 break;
             case 'k':
             case 'K':
@@ -156,16 +157,16 @@ void keyboardCallback(const std_msgs::Char::ConstPtr &msg, geometry_msgs::PoseSt
                 pose.pose.position.y -= trans_x.y;
                 pose.pose.position.z -= trans_x.z;
                 break;
-            case 'u':
-            case 'U':
+            case 'j':
+            case 'J':
                 // 执行逆时针旋转
-                xyz[0] += 0.1;
+                xyz[0] += 0.03;
                 
                 break;
-            case 'o':
-            case 'O':
+            case 'l':
+            case 'L':
                 // 执行顺时针旋转
-                xyz[0] -= 0.1;
+                xyz[0] -= 0.03;
                 break;
             case 'q':
             case 'Q':
