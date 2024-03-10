@@ -167,6 +167,17 @@ target_link_libraries(keyboard_pub
   ${catkin_LIBRARIES}
   ${PCL_LIBRARIES}
 )
+add_executable(control_node_robot src/control_node_robot.cpp)
+add_executable(keyboard_pub_robot src/keyboard_pub_robot.cpp)
+target_link_libraries(control_node_robot
+  ${catkin_LIBRARIES}
+  ${PCL_LIBRARIES}
+)
+target_link_libraries(keyboard_pub_robot
+  ${catkin_LIBRARIES}
+  ${PCL_LIBRARIES}
+)
+
 #############
 ## Install ##
 #############
