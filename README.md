@@ -74,6 +74,13 @@ rosrun keyboard keyboard_pub
 rosbag record /mavros/setpoint_position/local
 ```
 注意：由于px4无人机通过offboard进入板载运行，需要先起飞才能控制。录制bag的启动方式后仍然需要先运行`rosrun keyboard control_node`再手动`ctrl c`  
+
+3.10更新  
+```
+rosrun keyboard control_node_robot
+rosrun keyboard keyboard_pub_robot
+```
+可以相对机器人坐标系进行控制  
 ## 无人车控制
 
 ```
