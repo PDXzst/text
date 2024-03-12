@@ -1,6 +1,5 @@
 <sdf version='1.7'>
   <world name='default'>
-
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
       <pose>0 0 10 0 -0 0</pose>
@@ -37,13 +36,12 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>183 805000000</sim_time>
-      <real_time>64 199457493</real_time>
-      <wall_time>1708669838 197475822</wall_time>
-      <iterations>63928</iterations>
-
+      <sim_time>304 22000000</sim_time>
+      <real_time>120 743058406</real_time>
+      <wall_time>1710242594 491737252</wall_time>
+      <iterations>120217</iterations>
       <model name='office_geom'>
-        <pose>0 0 -0 0 -0 0</pose>
+        <pose>5.40131 -8.36889 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='office_world_link'>
           <pose>5.40131 -8.36889 -0 0 -0 0</pose>
@@ -58,7 +56,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>0.63792 33.5501 12.0619 0 0.143643 -1.54959</pose>
+        <pose>-1.0875 -8.77126 37.1667 0 1.50579 -0.005536</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -90,7 +88,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>model://cpr_office/meshes/office3.dae</uri>
+              <uri>model://cpr_office/meshes/office6.dae</uri>
             </mesh>
           </geometry>
           <max_contacts>10</max_contacts>
@@ -112,7 +110,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>model://cpr_office/meshes/office3.dae</uri>
+              <uri>model://cpr_office/meshes/office6.dae</uri>
             </mesh>
           </geometry>
         </visual>

@@ -1,0 +1,72 @@
+# Blender 4.0.2 MTL File: '无标题7.blend'
+# www.blender.org
+
+newmtl CP_WALLS
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd cp_walls.jpg.001.jpg
+
+newmtl Tiles05_3K
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd TilesRectangularMirrorGray001_COL_3K.jpg.001.jpg.001.jpg
+
+newmtl TilesRectangularMirrorGray001_3K
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd TilesRectangularMirrorGray001_COL_3K.jpg.001.jpg.001.jpg
+
+newmtl jackal_box.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd cardboard.jpg.006.jpg
+
+newmtl jackal_box.004
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd cardboard.jpg.006.jpg
+
+newmtl jackal_box.005
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd cardboard.jpg.006.jpg
+
+newmtl 材质.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd -s 8 8 8 TilesRectangularMirrorGray001_COL_3K.jpg.001.jpg
