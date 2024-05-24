@@ -1,0 +1,5 @@
+<!-- offboard mode start and control the UAV to a fixed hight -->
+<launch>
+    <node pkg = "key_board" type = "control_node" name="control_node"/>
+    <node pkg = "key_board" type = "keyboard_pub" name="keyboard_pub"/>
+</launch>

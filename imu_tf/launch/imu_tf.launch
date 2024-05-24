@@ -1,0 +1,24 @@
+<launch>
+    <node pkg="imu_tf" type="imu_tf" name="imu_data_output_uav0" output="screen">
+        <param name="groundtrue_topic" type="string" value="uav0/ground_state"/><!--输人无人机对应的groundtrue的topic-->
+        <param name="imu_topic" type="string" value="uav0/imu_msgs"/><!--输出imu数据的topic-->
+        <!--添加高斯噪声-->
+        <param name="mean" type="double" value="0"/><!--高斯噪声均值-->
+        <param name="stddev" type="double" value="0"/><!--高斯噪声方差-->
+    </node>
+    <node pkg="imu_tf" type="imu_tf" name="imu_data_output_uav1" output="screen">
+        <param name="groundtrue_topic" type="string" value="uav1/ground_state"/><!--输人无人机对应的groundtrue的topic-->
+        <param name="imu_topic" type="string" value="uav1/imu_msgs"/><!--输出imu数据的topic-->
+        <!--添加高斯噪声-->
+        <param name="mean" type="double" value="0"/><!--高斯噪声均值-->
+        <param name="stddev" type="double" value="0"/><!--高斯噪声方差-->
+    </node>
+    <node pkg="imu_tf" type="imu_tf" name="imu_data_output_uav2" output="screen">
+        <param name="groundtrue_topic" type="string" value="uav2/ground_state"/><!--输人无人机对应的groundtrue的topic-->
+        <param name="imu_topic" type="string" value="uav2/imu_msgs"/><!--输出imu数据的topic-->
+        <!--添加高斯噪声-->
+        <param name="mean" type="double" value="0"/><!--高斯噪声均值-->
+        <param name="stddev" type="double" value="0"/><!--高斯噪声方差-->
+    </node>
+
+</launch>

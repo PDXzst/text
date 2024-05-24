@@ -1,0 +1,15 @@
+<launch>
+    <!--输出曲线为/Path-->
+    <!-- groundture话题： -->
+    <arg name="true_odo_topic"  default="/ground_state"/>
+    <!-- groundture输出曲线话题： -->
+    <arg name="true_path_topic"  default="/ground_path"/>
+    <!-- groundture输出均方误差，这个是我毕设要调用的数据，可以不管： -->
+    <arg name="true_error_topic"  default="/ground_error"/>
+    
+    <node pkg="state_path_rviz" type="odom2path" name="groundture_odom_to_path" output="screen">
+        <param name="odom_topic" type="string" value="$(arg true_odo_topic)"/>
+        <param name="path_topic" type="string" value="$(arg true_path_topic)"/>
+        <param name="error_topic" type="string" value="$(arg true_error_topic)"/>
+    </node>
+</launch>

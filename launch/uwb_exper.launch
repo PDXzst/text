@@ -1,0 +1,29 @@
+<launch>
+    
+    <node pkg = "eskf" type = "eskf_node" name="eskf_node">
+        <param name="imu_topic" type="string" value="imu_data"/>
+    </node>
+    <node pkg="nlink_t" type="nlink_node" name ="nlink_out_node" >
+        <param name="uwb_in_topic" type="string" value="nlink_linktrack_nodeframe2"/>
+        <param name="uwb_out_topic" type="string" value="uwb_msgs"/>
+    </node>
+    <node pkg="moving_filer" type="moving_filer" name ="moving_filer" >
+        <param name="uwb_in_topic" type="string" value="uwb_msgs"/>
+        <param name="uwb_out_topic" type="string" value="uwb_mags_filed"/>
+    </node>
+    <!--
+    <node pkg="gpr" type="uwb_ml" name="gpr_node">
+        <param name="uwb_in_topic" type="string" value="uwb_mags_filed"/>
+        <param name="uwb_out_topic" type="string" value="uwb_mags_gpr"/>
+    </node>
+-->
+    <node pkg = "pozyx_simulation" type = "uwb_calculate_exper" name="uwb_calculate_LM" >
+        <param name="uwb_topic" type="string" value="uwb_mags_filed"/>
+    </node>
+    <node pkg="groundtrue_from_tf" type="groundtrue" name="groundtrue_publish" />
+    <node pkg="rosbag" type="play" name="player" output="screen" args="--clock /home/robot/data/data_rosbag/data3_nlos.bag"/>
+    <include file="$(find state_path_rviz)/launch/odom2pose.launch" />
+    <include file="$(find state_path_rviz)/launch/odom2path.launch" />
+    <node pkg="tf" type="static_transform_publisher" name="transfor_world2odom" args="0 0 0 0 0 0 odom world 100" />
+    <node pkg="rviz" name="rviz" type="rviz"  args="-d $(find eskf)/rviz/imu_uwb_eskf_ALLstart1.rviz"/>
+</launch>

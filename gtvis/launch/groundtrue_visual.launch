@@ -1,0 +1,57 @@
+<launch>
+
+    <node name="gtvis1" pkg="gtvis" type="groundtrue_visual" output="screen">
+        <param name="csv_file" type="string" value="/home/robot/ros_ws/biyesheji_ws/src/gtvis/csv_data/Data 2024-05-18 16-54-04_正向.csv" />
+        <param name="odom_topic" type="string" value="gt_front"/>
+    </node>
+    
+    <node name="gtvis2" pkg="gtvis" type="groundtrue_visual" output="screen">
+        <param name="csv_file" type="string" value="/home/robot/ros_ws/biyesheji_ws/src/gtvis/csv_data/Data 2024-05-19 17-24-16_相机.csv" />
+        <param name="odom_topic" type="string" value="gt_camera1"/>
+    </node>
+    <node name="gtvis3" pkg="gtvis" type="groundtrue_visual" output="screen">
+        <param name="csv_file" type="string" value="/home/robot/ros_ws/biyesheji_ws/src/gtvis/csv_data/Data 2024-05-19 17-38-15_相机2.csv" />
+        <param name="odom_topic" type="string" value="gt_camera2"/>
+    </node>
+    <node name="gtvis4" pkg="gtvis" type="groundtrue_visual" output="screen">
+        <param name="csv_file" type="string" value="/home/robot/ros_ws/biyesheji_ws/src/gtvis/csv_data/Data 2024-05-19 17-42-52_相机3.csv" />
+        <param name="odom_topic" type="string" value="gt_camera3"/>
+    </node>
+    <node pkg="rviz" name="rviz" type="rviz"  args="-d $(find gtvis)/rviz/path_rviz.rviz"/>
+    <node pkg="gtvis" type="odom2pose_time.py" name="groundture_odom_to_pose1" output="screen">
+        <param name="odom_topic" value="gt_camera1"/>
+        <param name="pose_topic" value="pose1"/>
+        <param name="line_topic" value="line1"/>
+        <!--颜色设置-->
+        <param name="red" type="int" value="1"/>
+        <param name="green" type="int" value="0"/>
+        <param name="blue" type="int" value="0"/>
+    </node>
+    <node pkg="gtvis" type="odom2pose_time.py" name="groundture_odom_to_pose2" output="screen">
+        <param name="odom_topic" value="gt_camera2"/>
+        <param name="pose_topic" value="pose2"/>
+        <param name="line_topic" value="line2"/>
+        <!--颜色设置-->
+        <param name="red" type="int" value="0"/>
+        <param name="green" type="int" value="1"/>
+        <param name="blue" type="int" value="0"/>
+    </node>
+    <node pkg="gtvis" type="odom2pose_time.py" name="groundture_odom_to_pose3" output="screen">
+        <param name="odom_topic" value="gt_camera3"/>
+        <param name="pose_topic" value="pose3"/>
+        <param name="line_topic" value="line3"/>
+        <!--颜色设置-->
+        <param name="red" type="int" value="0"/>
+        <param name="green" type="int" value="0"/>
+        <param name="blue" type="int" value="1"/>
+    </node>
+    <node pkg="gtvis" type="odom2pose_time.py" name="groundture_odom_to_pose4" output="screen">
+        <param name="odom_topic" value="gt_front"/>
+        <param name="pose_topic" value="posef"/>
+        <param name="line_topic" value="linef"/>
+        <!--颜色设置-->
+        <param name="red" type="int" value="1"/>
+        <param name="green" type="int" value="1"/>
+        <param name="blue" type="int" value="0"/>
+    </node>
+</launch>
